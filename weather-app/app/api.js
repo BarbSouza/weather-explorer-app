@@ -3,7 +3,8 @@ import axios from 'axios';
 const WEATHER_API_KEY = 'REMOVED_API_KEY';
 const WEATHER_BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
-export const fetchCurrentWeather = async (latitude, longitude) => {
+export const fetchCurrentWeather = async (latitude, longitude, units = 'metric') => {
+  const unitsParam = units === 'F' ? 'imperial' : 'metric';
   try {
     const response = await axios.get(
       `${WEATHER_BASE_URL}/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${WEATHER_API_KEY}`
@@ -27,9 +28,9 @@ export const fetchForecast = async (latitude, longitude) => {
   }
 };
 
-export const fetchHourlyForecast = async (latitude, longitude) => {
+export const fetchHourlyForecast = async (latitude, longitude, ) => {
   try {
-    // OpenWeatherMap's OneCall API provides hourly forecasts
+    
     const response = await axios.get(
       `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely&units=metric&appid=${WEATHER_API_KEY}`
     );
