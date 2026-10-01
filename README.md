@@ -90,8 +90,8 @@ A comprehensive cross-platform weather application built with Expo and React Nat
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/BarbSouza/weather-app.git
-cd weather-app
+git clone https://github.com/BarbSouza/weather-explorer-app.git
+cd weather-explorer-app/weather-app
 ```
 
 2. Install dependencies:
