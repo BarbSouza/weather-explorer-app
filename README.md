@@ -68,19 +68,14 @@ A comprehensive cross-platform weather application built with Expo and React Nat
   - Cloud movements
 - Responsive layouts:
   - Portrait/landscape adaptation
-  - Tablet optimization
-  - Desktop support
-- Accessibility features
+  - Web/desktop browser support
 
-### ⚙️ Technical Improvements
-- Enhanced performance
-- Offline capability
-- Data caching
-- Error handling
+### ⚙️ Technical Details
+- Global state with React Context (weather, temperature unit, theme)
+- Favourites and search history saved with AsyncStorage
+- Error handling with clear messages (city not found, rate limits, no connection)
 - Loading states
 - Pull-to-refresh
-- Gesture navigation
-- Search optimization
 
 ## 🚀 Getting Started
 
@@ -112,11 +107,11 @@ npx expo install expo-linear-gradient
 npx expo install react-native-maps
 ```
 
-4. Configuration:
+4. Configuration: get a free API key from [OpenWeatherMap](https://openweathermap.org/api), then inside the `weather-app` folder copy `.env.example` to `.env` and add your key:
 ```bash
-# Change to your API Key on api.js
-WEATHER_API_KEY=your_api_key_here
+EXPO_PUBLIC_OPENWEATHER_API_KEY=your_api_key_here
 ```
+The `.env` file is ignored by Git, so your key is never uploaded. Some forecast screens use OpenWeatherMap's One Call 3.0 API, which needs its own (free-tier) subscription on your account.
 
 5. Running the App:
 ```bash
@@ -130,11 +125,9 @@ w # Web
 ```
 
 
-## Testing and Quality Assurance
-- Unit testing for core components
-- Integration testing for API services
-- User interface testing
-- Cross-platform compatibility verification
+## Testing
+- Tested manually on iOS, Android and web throughout development
+- No automated tests yet
 
 ## Future Enhancements
 1. Weather alerts and notifications
