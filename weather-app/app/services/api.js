@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 /** @constant OpenWeatherMap API configuration */
-export const WEATHER_API_KEY = 'REMOVED_API_KEY';
+export const WEATHER_API_KEY = process.env.EXPO_PUBLIC_OPENWEATHER_API_KEY;
 export const WEATHER_BASE_URL = 'https://api.openweathermap.org/data/2.5';
 export const MAP_BASE_URL = 'https://tile.openweathermap.org/map';
 
